@@ -21,8 +21,6 @@ inquirer.prompt([
         choices: ["fahrenheit", "celsius"]
     }
 ]).then(({ name, location, degreeType }) => {
-    console.log(location);
-
     weather.find({ search: location, degreeType: degreeType === "fahrenheit" ? "F" : "C" }, (err, result) => {
         if (err) console.log(err);
 
